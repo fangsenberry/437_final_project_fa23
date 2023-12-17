@@ -12,13 +12,14 @@ This repository contains all the necessary files and instructions for setting up
 
 ### Execution Instructions:
 1. Navigate to the `pi/` directory.
-2. Run `python3 recognition.py` to start the application.
-3. Run `python3 server.py` to start server
+2. Edit the `perspective` variable in `recognition.py` to the appropriate axis that you have placed your camera on.
+3. Run `python3 server.py` to start server, the server will handle starting of the camera code.
 
 ### Input File Format:
 
 
 ### Output Files:
+1. `output_x.json` and `output_y.json` - JSON files containing the x and y coordinates of the detected person.
 
 
 ### Hardcoded Addresses:
@@ -28,6 +29,9 @@ This repository contains all the necessary files and instructions for setting up
 1. Connect the Raspberry Pi to the camera module.
 2. Ensure the Raspberry Pi is connected to a power source.
 3. Connect the Raspberry Pi to a monitor.
+
+### Post Processing and Plotting:
+1. Run `python3 plot_positions.py` to generate a plot of the detected person's location, and them moving through the space.
 
 ---
 
