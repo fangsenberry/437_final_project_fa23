@@ -1,4 +1,5 @@
 import socket
+import subprocess
 
 def udp_server():
     # Create a UDP socket
@@ -10,6 +11,8 @@ def udp_server():
 
     print('UDP server is running. Listening for messages...')
 
+    recognition_process = None
+
     while True:
         # Receive a message and the client address
         message, client_address = server_socket.recvfrom(1024)
@@ -17,7 +20,9 @@ def udp_server():
 
         if message == '1':
             print('Received binary 1 from', client_address)
-            # Handle binary 1 message
+            # Start recognition.py if not already running
+            if recognition_process is None:
+                recognition_process = subprocess.Popen(["bash", "start_recognition.sh"])
 
         elif message == '0':
             print('Received binary 0 from', client_address)
@@ -25,6 +30,9 @@ def udp_server():
 
         elif message == 'quit':
             print('Received quit message from', client_address)
+            if recognition_process is not None:
+                subprocess.call(["bash", "stop_recognition.sh"])
+                recognition_process = None
             break
 
     # Close the socket
