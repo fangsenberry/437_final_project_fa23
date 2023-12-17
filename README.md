@@ -7,9 +7,6 @@ This repository contains all the necessary files and instructions for setting up
 
 ## Section 1: Raspberry Pi Setup
 
-### Files and Folders:
-
-
 ### Execution Instructions:
 1. Navigate to the `pi/` directory.
 2. Edit the `perspective` variable in `recognition.py` to the appropriate axis that you have placed your camera on.
