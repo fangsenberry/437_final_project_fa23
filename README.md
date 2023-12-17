@@ -58,4 +58,7 @@ This repository contains all the necessary files and instructions for setting up
 - Ensure all drivers for the radar module are installed on the Raspberry Pi.
 - For detailed radar module setup, refer to the manufacturer's documentation.
 
+### Post Processing and Plotting:
+1. Run `python3 plot_positions_radar.py` to generate a plot of the detected person's location, and them moving through the space, use the appropriate path to the data file. You can edit it in the `main()` function.
+
 ---
